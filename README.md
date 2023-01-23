@@ -33,3 +33,17 @@ _https://jlenz27.github.io/Portfolio/_
 _If you have any issues running this program or wish to contact me please email me at John.lenz29@gmail.com_
 
 Copyright (c) 1/06/2023 John Lenz(s)
+
+
+Test:
+Describe: placesBeen()
+
+Test: "it should add a contact."
+Code:
+function PlacesBeen(locations, timeOfYear, landmark, notes) {
+  this.locations = locations;
+  this.timeOfYear = timeOfYear;
+  this.landmark = landmark;
+  this.notes = notes
+
+Expected Output: PlacesBeen {locations: 'ohio', timeOfYear: 'December', landmark: 'stadium', notes: 'it was cold'}
