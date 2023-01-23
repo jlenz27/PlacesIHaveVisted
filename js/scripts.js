@@ -1,19 +1,38 @@
-// function placesBeen(){
-//     this.locations = {};
-//     this.timeOfYear = {};
-//     this.landmark = {};
-//     this.notes = {};
-// }
+function PlaceEntry() {
+    this.locations = {};
+    this.currentId = 0;
+};
 
-// placesBeen.prototype.addLocation = function(location){
-//     location.id = this.assignId();
-//     this.location[location.id] = location;
+PlaceEntry.prototype.addLocation = function (location) {
+    location.id = this.assignId();
+    this.locations[location.id] = location;
 
-// }
+};
+
+PlaceEntry.prototype.assignId = function () {
+    this.currentId += 1;
+    return this.currentId;
+};
+
+PlaceEntry.prototype.findLocation = function (id) {
+    if (this.location[id] !== undefined) {
+        return this.location[id];
+    }
+    return false;
+};
+
+PlaceEntry.prototype.deleteLocation = function (id) {
+    if (this.location[id] === undefined) {
+      return false;
+    }
+    delete this.location[id];
+    return true;
+  };
+
 
 function PlacesBeen(locations, timeOfYear, landmark, notes) {
-  this.locations = locations;
-  this.timeOfYear = timeOfYear;
-  this.landmark = landmark;
-  this.notes = notes;
-}
+    this.locations = locations;
+    this.timeOfYear = timeOfYear;
+    this.landmark = landmark;
+    this.notes = notes;
+};
